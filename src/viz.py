@@ -5,8 +5,10 @@ from shapely.geometry import Point
 from sklearn.neighbors import KernelDensity
 from sklearn.neighbors import NearestNeighbors
 import folium
+import os
 
-
+save_dir = "outputs/figures"
+os.makedirs(save_dir, exist_ok=True)
 
 
 def plot_points(gdf: gpd.GeoDataFrame, title: str, savepath: str = None):
@@ -14,7 +16,7 @@ def plot_points(gdf: gpd.GeoDataFrame, title: str, savepath: str = None):
     gdf.plot(ax=ax, markersize=5, color='darkred')
     ax.set_title(title)
     if savepath:
-        fig.savefig(savepath, dpi=150, bbox_inches='tight')
+        fig.savefig(os.path.join(save_dir, "all_chipotles_projected.png"), dpi=150, bbox_inches='tight')
         plt.close(fig)
 
 
