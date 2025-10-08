@@ -1,0 +1,16 @@
+geopandas
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+folium
+contextily
+shapely
+pyproj
+rtree
+networkx
+hdbscan
+scipy
+geopy
+h3
